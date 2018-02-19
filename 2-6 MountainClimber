@@ -1,0 +1,52 @@
+
+/**
+   @Author: Helen Sohn
+   @Teacher: Don Allen
+   */
+   
+   public class MountainClimber implements Directions
+{
+    public static void task(UrRobot karel)  
+    {
+        karel.move();
+        karel.turnLeft();
+        karel.move();
+        karel.move();
+        karel.turnLeft();
+        karel.turnLeft();
+        karel.turnLeft();
+        karel.move();
+        karel.putBeeper();
+        karel.turnLeft();
+        karel.move();
+        karel.move();
+        karel.turnLeft();
+        karel.turnLeft();
+        karel.turnLeft();
+        karel.move();
+        karel.putBeeper();
+        karel.move();
+        karel.turnLeft();
+        karel.turnLeft();
+        karel.turnLeft();
+        karel.move();
+        karel.move();
+        karel.putBeeper();
+        karel.turnLeft();
+        karel.move();
+        karel.turnLeft();
+        karel.turnLeft();
+        karel.turnLeft();
+        karel.move();
+        karel.move();
+        karel.turnLeft();
+        karel.move();
+    } 
+
+    public static void turnRight(UrRobot karel)
+    {
+        karel.turnLeft();
+        karel.turnLeft();
+        karel.turnLeft();
+    }
+}
