@@ -1,0 +1,19 @@
+import kareltherobot.*;
+
+public class MountainClimberDriver implements Directions
+{
+	public static void main(String args[])  
+	{
+	    UrRobot testBot = new UrRobot(1,2,East, 3);
+       MountainClimber.task(testBot);
+    } 
+    
+    static {
+        World.reset(); 
+        World.readWorld("chp2_6.kwld"); 
+        World.setDelay(10);  
+        World.setVisible(true);
+    }
+    
+
+}
