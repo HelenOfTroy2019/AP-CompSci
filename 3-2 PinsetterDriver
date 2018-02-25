@@ -1,0 +1,23 @@
+import kareltherobot.*;
+/**
+ * Write a description of class Driver here.
+ * 
+ * @author Helen Sohn
+ * @version (a version number or a date)
+ */
+public class PinSetterDriver implements Directions
+{
+    public static void main(String args[])
+    {
+        PinSetter karel = new PinSetter(1,5,North, 10);
+        karel.setPins();
+    }
+    static
+    {
+    	World.reset();	
+    	
+    	World.setDelay(5);
+    	World.setVisible(true);    	
+    }
+    
+}
