@@ -1,0 +1,46 @@
+import java.util.*;
+/**
+ * Write a description of class Warm00 here.
+ * 
+ * @author Helen Sohn
+ * @version (a version number or a date)
+ */
+public class Warm01
+{
+    // precond: nums.length >= 1 
+    // returns the index of the largest integer in the nums array (first such index if more than one) 
+    public static int findPosOfLargest(int[] nums) 
+    {
+        int index=0;
+        for (int i=1; i<nums.length; i++) {
+            if (nums[i] > nums[index]) {
+                index = i;
+            }
+        }
+        return index;
+    }
+    // precond: nums.size() >= 1 
+    // postcond: returns the largest Integer object (first such Integer if more than one) 
+    public static Integer findLargest(ArrayList<Integer> nums) 
+    {
+        Integer ans = -100;
+        for (int i=0; i<nums.size(); i++) {
+            if (nums.get(i) > ans) {
+                ans = nums.get(i);
+            }
+        }
+        return ans;
+    }
+    // precond: nums.size() >= 1 
+    // postcond: return the location of the largest String (lexicographically) in words 
+    public static int findPosOfLargest(ArrayList<String> words) 
+    {
+        int index=0;
+        for (int i=1; i<words.size(); i++) {
+            if (words.get(i).compareTo(words.get(index)) > 0) {
+                index = i;
+            }
+        }
+        return index;
+    }
+}
