@@ -1,0 +1,352 @@
+/**
+ * Write a description of class writeTime here.
+ * 
+ * @author Helen Sohn 
+ * @version (a version number or a date)
+ */
+import kareltherobot.*;
+public class NasaBot extends UrRobot
+{
+    public NasaBot (int street, int avenue, Direction direction, int beepers){
+        super(street, avenue, direction, beepers);
+    }    
+
+    public void showTime()
+    {
+        makeOne();
+        makeZero();
+        makeColon();
+        makeFive();
+        makeEight();
+        makeColon();
+        makeFour();
+        makeNine();
+        makeColon();
+        makeThree();
+        makeSix();
+        makeColon();
+        makeTwo();
+        makeSeven();
+    }
+
+    public void makeOne(){
+        turnLeft();
+        makeRow();
+        turnRight();
+        move();
+        turnRight();
+        move();
+        move();
+        move();
+        move();
+        turnLeft();
+        move();
+    }
+
+    public void makeTwo(){
+        turnLeft();
+        move();
+        move();
+        move();
+        move();
+        turnRight();
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnRight();
+        move();
+        putBeeper();
+        move();
+        turnRight();
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnLeft();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnLeft();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+        move();
+    }
+
+    public void makeThree(){
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnLeft();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnLeft();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnLeft();
+        turnLeft();
+        move();
+        move();
+        turnLeft();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnLeft();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnLeft();
+        turnLeft();
+        move();
+        move();
+        move();
+        turnRight();
+        move();
+        move();
+        move();
+        move();
+        turnLeft();
+        move();
+    }
+
+    public void makeFour(){
+        move();
+        move();
+        turnLeft();
+        makeRow();
+        turnLeft();
+        turnLeft();
+        move();
+        move();
+        turnRight();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnRight();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnRight();
+        move();
+        move();
+        move();
+        turnRight();
+        move();
+        move();
+        move();
+        move();
+        turnLeft();
+        move();
+    }
+
+    public void makeFive(){
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnLeft();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnLeft();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnRight();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnRight();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+        move();
+        turnRight();
+        move();
+        move();
+        move();
+        move();
+        turnLeft();
+    }
+
+    public void makeSix(){
+        turnLeft();
+        makeRow();
+        turnRight();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnLeft();
+        turnLeft();
+        move();
+        turnLeft();
+        move();
+        move();
+        putBeeper();
+        turnLeft();
+        move();
+        putBeeper();
+        turnRight();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnRight();
+        move();
+        putBeeper();
+        turnLeft();
+        turnLeft();
+        move();
+        move();
+        move();
+    }
+
+    public void makeSeven(){
+        turnLeft();
+        move();
+        move();
+        move();
+        move();
+        turnRight();
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+        turnRight();
+        makeRow();
+        turnLeft();
+        move();
+        move();
+    }
+
+    public void makeEight(){
+        turnLeft();
+        makeRow();
+        turnRight();
+        move();
+        putBeeper();
+        move();
+        turnRight();
+        makeRow();
+        turnRight();
+        move();
+        putBeeper();
+        move();
+        turnRight();
+        move();
+        move();
+        turnRight();
+        move();
+        putBeeper();
+        move();
+        move();
+        move();
+        turnRight();
+        move();
+        move();
+        turnLeft();
+    }
+
+    public void makeNine(){
+        move();
+        move();
+        turnLeft();
+        makeRow();
+        turnLeft();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnLeft();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnLeft();
+        move();
+        putBeeper();
+        move();
+        move();
+        move();
+        turnRight();
+        move();
+        move();
+        turnLeft();
+    }
+    
+    public void makeZero(){
+        turnLeft();
+        makeRow();
+        turnRight();
+        move();
+        putBeeper();
+        move();
+        turnRight();
+        makeRow();
+        turnRight();
+        move();
+        putBeeper();
+        turnLeft();
+        turnLeft();
+        move();
+        move();
+        move();
+    }
+    
+    public void makeColon(){
+        turnLeft();
+        move();
+        putBeeper();
+        move();
+        move();
+        putBeeper();
+        turnLeft();
+        turnLeft();
+        move();
+        move();
+        move();
+        turnLeft();
+        move();
+    }
+
+    public void makeRow(){
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+    }
+
+    public void turnRight(){
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+}
