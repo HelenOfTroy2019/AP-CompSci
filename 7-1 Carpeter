@@ -1,0 +1,44 @@
+import kareltherobot.*;
+
+public class Carpeter extends Robot
+{
+    
+    public Carpeter (int street, int avenue, Direction direction, int beepers) {
+        super(street, avenue, direction, beepers);
+    }
+ 
+    
+    public int carpetHallway()
+    {
+        if (nextToABeeper()) {
+            if (!frontIsClear()) {
+                turnRight();
+            }
+            return 0;
+        }
+        else {
+            putBeeper();
+            if (frontIsClear()) {
+                move();
+            }
+            else {
+                turnRight();
+                move();
+            }
+            return 1 + carpetHallway();
+        }
+    }
+
+	public void faceNorth() {
+		if (!facingNorth()) {
+			turnLeft();
+			faceNorth();
+		}
+	}
+    
+    public void turnRight() {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+}
