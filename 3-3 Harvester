@@ -1,0 +1,64 @@
+/**
+ * Write a description of class Harvester here.
+ * 
+ * @author Helen Sohn 
+ * @version (a version number or a date)
+ */
+import kareltherobot.*;
+public class Harvester extends UrRobot
+{
+    
+    public Harvester(int street, int avenue, Direction direction, int beepers)
+    {
+        super(street, avenue, direction, beepers);
+    }
+    
+    public void harvestField(){
+        move();
+        harvestTwoRows();
+        positionForNextHarvest();
+        harvestTwoRows();
+        positionForNextHarvest();
+        harvestTwoRows();
+        move();
+        turnOff();
+    }
+
+    public void harvestTwoRows()
+    {
+        harvestOneRow();
+        goToNextRow();
+        harvestOneRow();
+    }
+    
+    public void positionForNextHarvest(){
+        turnRight();
+        move();
+        turnRight();
+    }
+    
+    public void turnRight(){
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+    
+    public void harvestOneRow(){
+        pickBeeper();
+        move();
+        pickBeeper();
+        move();
+        pickBeeper();
+        move();
+        pickBeeper();
+        move();
+        pickBeeper();
+    }
+    
+    public void goToNextRow() {
+        turnLeft();
+        move();
+        turnLeft();
+    }
+   
+}
