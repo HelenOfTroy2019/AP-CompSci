@@ -1,0 +1,52 @@
+import kareltherobot.*;
+/**
+ * Write a description of class DifferentSteepleChaser here.
+ * 
+ * @author Helen Sohn
+ * @version (a version number or a date)
+ */
+public class DifferentSteepleChaser extends SmarterRobot
+{
+    public DifferentSteepleChaser (int street, int avenue, Direction direction, int beepers) {
+        super (street, avenue, direction, beepers);
+    }
+
+    public void runRace()
+    {
+        runAvenue();
+        runAvenue();
+        runAvenue();
+        runAvenue();
+        runAvenue();
+        runAvenue();
+        runAvenue();
+        runAvenue();
+    }
+    
+    public void runAvenue() {
+        move();
+        if (nextToABeeper()){
+            pickBeeper();
+            turnLeft();
+            move();
+            if (nextToABeeper()) {
+                pickBeeper();
+                move();
+                if (nextToABeeper()){
+                    pickBeeper();
+                }
+                turnLeft();
+                turnLeft();
+                move();
+                move();
+                turnLeft();
+            }
+            else {
+                turnLeft();
+                turnLeft();
+                move();
+                turnLeft();
+            }
+        }
+    }
+}
