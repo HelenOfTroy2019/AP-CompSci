@@ -1,0 +1,41 @@
+/**
+ * Write a description of class AddEmUp here.
+ * 
+ * @author Helen Sohn
+ * @version (a version number or a date)
+ */
+import java.util.ArrayList;
+@SuppressWarnings("unchecked")
+public class CheckOrder
+{
+	
+	/**
+	 * Postcondition:     checks if all the items in arr are in the 
+	 *						correct ordering defined by Comparable
+	 */
+	public static boolean outOfOrder(Comparable [] arr)
+	{
+		for (int i=1; i<arr.length; i++) {
+		    if (arr[i].compareTo(arr[i-1]) < 0) {
+		        return false;
+		    }
+		}
+		return true;
+	}
+	
+	/**
+	 * Postcondition:     checks if all the items in arr are in the 
+	 *						correct ordering defined by Comparable
+	 */
+	public static boolean outOfOrder(ArrayList <Comparable> arr)
+	{
+		for (int i=1; i<arr.size(); i++) {
+		    
+		    if ((arr.get(i).compareTo(arr.get(i-1)) < 0)) {
+		        return false;
+		    }
+		}
+		return true;
+	}
+	
+}
