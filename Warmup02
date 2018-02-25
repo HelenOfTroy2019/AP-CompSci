@@ -1,0 +1,41 @@
+/**
+ * Write a description of class AddEmUp here.
+ * 
+ * @author Helen Sohn
+ * @version (a version number or a date)
+ */
+import java.util.ArrayList;
+public class AreTheseTheSame
+{
+    
+    /**
+     * @return     true if the two arrays contain the same elements in the same order.
+     */
+    public static boolean containsTheSameElementsInSameOrder(Comparable [] arr1, Comparable [] arr2)
+    {
+        if (arr1.length == arr2.length) {
+            for (int i=0; i<arr1.length; i++) {
+                if (arr1[i].compareTo(arr2[i]) != 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+    
+    /**
+     * @return     true if the two array lists contain the same elements in the same order.
+     */
+    public static boolean containsTheSameElementsInSameOrder(ArrayList <Comparable> arr1, ArrayList <Comparable> arr2)
+    {
+        if (arr1.size() == arr2.size()) {
+            for (int i=0; i<arr1.size(); i++) {
+                if (arr1.get(i).compareTo(arr2.get(i)) != 0)
+                    return false;
+            }
+            return true;
+        }
+        return false;
+    }
+}
