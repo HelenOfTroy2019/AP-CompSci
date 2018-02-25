@@ -1,0 +1,76 @@
+/**
+ * Write a description of class GardenerBot here.
+ * 
+ * @author Helen Sohn
+ * @version (a version number or a date)
+ */
+import kareltherobot.*;
+public class GardenerBot extends UrRobot
+{
+    public GardenerBot(int street, int avenue, Direction direction, int beepers)
+    {
+       super(street, avenue, direction, beepers);
+    }
+    
+    public void plantGarden() {
+        turnLeft();
+        move();
+        move();
+        move();
+        putBeeper();
+        turnLeft();
+        move();
+        plantInner();
+        plantOuter();
+        plantAround();
+        plantInner();
+        plantOuter();
+        plantAround();
+        plantInner();
+        plantOuter();
+        plantAround();
+        plantInner();
+        plantOuter();
+        move();
+        putBeeper();
+        turnRight();
+        move();
+        move();
+        move();
+        move();
+        turnLeft();
+    }
+    
+    public void plantInner() {
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        turnLeft();
+    }
+    
+    public void plantOuter(){
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+    }
+    
+    public void plantAround() {
+        move();
+        putBeeper();
+        turnRight();
+        move();
+        putBeeper();
+        turnRight();
+        move();
+    }
+
+    public void turnRight()
+    {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+}
