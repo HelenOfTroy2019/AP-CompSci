@@ -1,0 +1,77 @@
+/**
+ * Write a description of class BaseballBot here.
+ * 
+ * @author Helen Sohn 
+ * @version (a version number or a date)
+ */
+
+import kareltherobot.*;
+public class BaseballBot extends UrRobot
+{
+    public BaseballBot(int street, int avenue, Direction direction, int beepers)
+    {
+       super(street, avenue, direction, beepers);
+    }
+
+    public void clearDiamond()
+    {
+       move();
+       clearOneRow();
+       turnRight();
+       movingAround();
+       clearOneRow();
+       movingBack();
+       clearOneRow();
+       movingAround();
+       move();
+       move();
+       turnRight();
+       clearOneRow();
+       turnRight();
+       move();
+       move();
+       move();
+       move();
+       turnRight();
+       move();
+       move();
+       move();
+       turnRight();
+       turnOff();
+    }
+    
+    public void clearOneRow(){
+        clearSpot();
+        turnRight();
+        clearSpot();
+        turnRight();
+        clearSpot();
+        pickBeeper();
+    }
+    
+    public void clearSpot(){
+        pickBeeper();
+        move();
+        turnLeft();
+        move();
+    }
+    
+    public void movingAround() {
+        move();
+        turnRight();
+        move();
+        turnRight();
+    }
+    
+    public void movingBack() {
+        move();
+        turnLeft();
+        move();
+    }
+    
+    public void turnRight() {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+}
