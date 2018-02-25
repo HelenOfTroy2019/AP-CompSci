@@ -1,0 +1,19 @@
+import kareltherobot.*;
+
+public class GroceryPickerUpperDriver implements Directions
+{
+    public static void main(String args[])  
+    {
+        UrRobot testBot = new UrRobot(5, 7,East, 0);
+        GroceryPickerUpper.task(testBot);
+    } 
+    
+    static {
+        World.reset(); 
+        World.readWorld("ch2_7.kwld"); 
+        World.setDelay(10);  
+        World.setVisible(true);
+    }
+    
+
+}
