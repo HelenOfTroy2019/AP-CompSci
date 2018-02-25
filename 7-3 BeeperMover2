@@ -1,0 +1,56 @@
+import kareltherobot.*;
+
+public class BeeperMover2 extends Robot
+{
+    public BeeperMover2 (int street, int avenue, Direction direction, int beepers) {
+        super(street, avenue, direction, beepers);
+    }
+    
+    public int moveBeepersNorth()
+    {
+        findStart();
+        pickAndTranslateSelfToTheNorth();
+        dropRow();
+        move();
+        return -1; //so it compiles
+    }
+    
+    public void findStart() {
+        if (nextToABeeper()) {
+            return;
+        }
+        else {
+            move();
+            findStart();
+        }
+        return;
+    }
+    
+    public void pickAndTranslateSelfToTheNorth() {
+        if (nextToABeeper()){
+            pickBeeper();
+            move();
+            pickAndTranslateSelfToTheNorth();
+            move();
+        }
+        faceNorth();
+    }
+    
+    public void dropRow() {
+        if (anyBeepersInBeeperBag()) {
+        faceNorth();
+        turnLeft();
+        move();
+        putBeeper();
+        dropRow();
+    }
+    }
+    
+    public void faceNorth() {
+        if (!facingNorth()) {
+            turnLeft();
+            faceNorth();
+        }
+        return;
+    }
+}
