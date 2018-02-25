@@ -1,0 +1,33 @@
+/**
+ * Write a description of class ArrangerBot here.
+ * 
+ * @author Helen Sohn 
+ * @version (a version number or a date)
+ */
+import kareltherobot.*;
+public class ArrangerBot extends UrRobot
+{
+    public ArrangerBot(int street, int avenue, Direction direction, int beepers){
+        super(street, avenue, direction, beepers);
+    }
+    
+    public void arrangeBeepers(){
+        makeRow();
+        turnLeft();
+        makeRow();
+        turnLeft();
+        makeRow();
+        turnLeft();
+        makeRow();
+        turnLeft();
+    }
+    
+    public void makeRow(){
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+        putBeeper();
+        move();
+    }
+}
