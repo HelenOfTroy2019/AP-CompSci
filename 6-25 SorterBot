@@ -1,0 +1,96 @@
+import kareltherobot.*; 
+/**
+ * @author : Helen Sohn
+ * teacher : Coglianese
+ * due date:
+ */
+public class SorterBot  extends SmarterRobot
+{
+    public SorterBot (int street, int avenue, Direction direction, int beepers){
+        super(street, avenue, direction, beepers);
+    }
+    
+    public void sortThemAll()
+    {
+	   origin();
+       nextRow();
+       pickStreet();
+       while (anyBeepersInBeeperBag()){
+           origin();
+           findRow();
+           putStreet();
+           turnAround();
+           nextRow();
+           pickStreet();
+          
+       }
+    }
+    
+    public void turnAround() {
+        turnLeft();
+        turnLeft();
+    }
+    
+    public void turnRight() {
+        turnAround();
+        turnLeft();
+    }
+    
+    public void origin() {
+        while (!facingSouth()){
+            turnLeft();
+        }
+        while (frontIsClear()){
+            move();
+        }
+        turnRight();
+        while (frontIsClear()){
+            move();
+        }
+        turnAround();
+    }
+    
+    public void pickStreet() {
+        while (frontIsClear()){
+            if (nextToABeeper()) {
+                pickBeeper();
+                move();
+            }
+            else {
+                move();
+            }
+        }
+        if (nextToABeeper()){
+            pickBeeper();
+        }
+    }
+    
+    public void putStreet() {
+        while (anyBeepersInBeeperBag()){
+            putBeeper();
+            if (anyBeepersInBeeperBag()){
+                move();
+            }
+        }
+    }
+    
+    public void nextRow() {
+        while (nextToABeeper()) {
+            move();
+        }
+        turnAround();
+        move();
+        turnRight();
+        move();
+        turnLeft();
+    }
+    
+    public void findRow() {
+        nextRow();
+        turnRight();
+        while (nextToABeeper()){
+            move();
+        }
+        turnLeft();
+    }
+}
