@@ -1,0 +1,18 @@
+import kareltherobot.*;
+
+public class Figure8Driver implements Directions
+{
+    public static void main(String args[])  
+    {
+        Figure8 testBot = new Figure8(3, 5,North, 0);
+    } 
+    
+    static {
+        World.reset(); 
+        World.readWorld("ch2_9.kwld"); 
+        World.setDelay(10);  
+        World.setVisible(true);
+    }
+    
+
+}
