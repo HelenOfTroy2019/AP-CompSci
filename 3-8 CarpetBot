@@ -1,0 +1,39 @@
+/**
+ * Write a description of class carpetBot here.
+ * 
+ * @author Helen Sohn 
+ * @version (a version number or a date)
+ */
+import kareltherobot.*;
+public class CarpetBot extends UrRobot
+{
+    public CarpetBot(int street, int avenue, Direction direction, int beepers)
+    {
+        super(street, avenue, direction, beepers);
+    }
+    public void carpet(){
+        makeRow();
+        turnLeft();
+        makeRow();
+        turnLeft();
+        makeRow();
+        turnLeft();
+        makeRow();
+        turnLeft();
+    }
+    
+    public void makeRow(){
+        moveAndBeeper();
+        moveAndBeeper();
+        moveAndBeeper();
+        moveAndBeeper();
+        moveAndBeeper();
+        moveAndBeeper();
+        moveAndBeeper();
+    }
+    
+    public void moveAndBeeper(){
+        putBeeper();
+        move();
+    }
+}
