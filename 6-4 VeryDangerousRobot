@@ -1,0 +1,37 @@
+import kareltherobot.*; 
+/**
+ * @author : Helen Sohn
+ * teacher : Coglianese
+ * due date:
+ */
+public class VeryDangerousRobot extends SmarterRobot
+{
+    public VeryDangerousRobot(int street, int avenue, Direction direction, int beepers) {
+        super(street, avenue, direction, beepers);
+    }
+
+    public void moveIntoRobotHeaven()
+    {
+        while (!facingEast()){
+            turnLeft();
+        }
+        while (nextToABeeper()){
+            pickBeeper();
+            turnLeft();
+            turnLeft();
+        }
+        while (anyBeepersInBeeperBag()){
+            putBeeper();
+        }
+        move();
+        while (nextToABeeper()) {
+            pickBeeper();
+        }
+        turnLeft();
+        turnLeft();
+        move();
+        while (!facingNorth()){
+            turnLeft();
+        }
+    }
+}
