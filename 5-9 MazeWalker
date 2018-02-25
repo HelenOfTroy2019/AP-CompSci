@@ -1,0 +1,53 @@
+/**
+ * Write a description of class MazeWalker here.
+ * 
+ * @author Helen Sohn 
+ * @version (a version number or a date)
+ */
+import kareltherobot.*;
+
+public class MazeWalker extends Robot
+
+{
+    public MazeWalker(int street, int avenue, Direction direction, int beepers){
+        super(street, avenue, direction, beepers);
+    }
+
+    public void followWallRight()
+    {
+        if (!frontIsClear()) {
+            turnLeft();
+            return;
+        }
+        else {
+            move();
+            if (!wallOnRight())
+            {
+                turnRight();
+                move();
+                if (!wallOnRight()) {
+                    turnRight();
+                    move();
+                }
+            }
+        }
+    }
+
+    public boolean wallOnRight() {
+        turnRight();
+        if (!frontIsClear()) {
+            turnLeft();
+            return true;
+        }
+        else {
+            turnLeft();
+            return false;
+        }
+    }
+
+    public void turnRight() {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+}
