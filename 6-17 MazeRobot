@@ -1,0 +1,31 @@
+import kareltherobot.*; 
+/**
+ * @author : Helen Sohn
+ * teacher : Coglianese
+ * due date:
+ */
+public class MazeRobot extends MazeWalker
+{
+    public MazeRobot (int street, int avenue, Direction direction, int beepers){
+        super(street, avenue, direction, beepers);
+    }
+
+    public void escape()
+    {
+        while (!nextToABeeper()) {
+            followWallRight();
+        }
+    }
+    
+    public boolean rightIsClear() {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+        if (frontIsClear()){
+            turnLeft();
+            return true;
+        }
+        turnLeft();
+        return false;
+    }
+}
