@@ -1,0 +1,26 @@
+import kareltherobot.*;
+
+public class WestWallBeeperGetter extends Robot
+{
+    public WestWallBeeperGetter(int street, int avenue, Direction direction, int beepers) {
+        super(street, avenue, direction, beepers);
+    }
+    
+    public int getBeeper()
+    {
+        while (!facingWest()) {
+            turnLeft();
+        }
+        if (frontIsClear()) {
+            move();
+            getBeeper();
+            move();
+        }
+        else {
+            turnLeft();
+            turnLeft();
+            pickBeeper();
+        }
+        return -1;
+    }
+}
