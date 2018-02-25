@@ -1,0 +1,69 @@
+/**
+@Author: Helen Sohn
+Date: Sep 06, 2006 
+Teacher: 
+Lab: 
+Misc: 
+ */
+import kareltherobot.*;
+public class Karpeter extends SmarterRobot
+{
+    public Karpeter (int street, int avenue, Direction direction, int beepers) {
+        super(street, avenue, direction, beepers);
+    }
+
+    public void carpetRooms()
+    {
+        moveAndCheck();
+        moveAndCheck();
+        moveAndCheck();
+        moveAndCheck();
+        moveAndCheck();
+        moveAndCheck();
+        moveAndCheck();
+        moveAndCheck();
+        moveAndCheck();
+    }
+
+    public void moveAndCheck() {
+        moveRoom();
+        checkRoom();
+    }
+
+    public void moveRoom(){
+        move();
+        turnLeft();
+        move();
+    }
+
+    public void checkRoom() {
+        if(!frontIsClear()){
+            turnLeft();
+            if(!frontIsClear()){
+                turnLeft();
+                turnLeft();
+                if(!frontIsClear()){
+                    putBeeper();
+                    turnLeft();
+                    turnLeft();
+                    turnLeft();
+                }
+                else {
+                    turnLeft();
+                    turnLeft();
+                    turnLeft();
+                }
+            }
+            else {
+                turnLeft();
+            }
+        }
+        else {
+            turnLeft();
+            turnLeft();
+        }
+        move();
+        turnLeft();
+    }
+
+    }
